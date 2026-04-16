@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kreativa | Agência de Marketing Digital</title>
+  <meta name="description" content="Ajudamos pequenos e médios negócios a crescerem no digital com sites, redes sociais, identidade visual e tráfego pago." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f3f1;
+      --surface: #ffffff;
+      --surface-2: #f9f7f6;
+      --text: #101828;
+      --muted: #667085;
+      --line: rgba(16, 24, 40, 0.08);
+      --primary: #ff7a1a;
+      --primary-dark: #e8690f;
+      --shadow: 0 18px 45px rgba(16, 24, 40, 0.08);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #bc5b19;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.05;
+      margin: 0 0 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-title .highlight,
+    .hero-title .highlight,
+    .cta-title .highlight {
+      color: var(--primary);
+    }
+
+    .section-text,
+    .hero-text {
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.35rem);
+      max-width: 760px;
+      margin: 0;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn {
+      border: 1px solid transparent;
+      background: var(--surface);
+      color: var(--text);
+      padding: 18px 28px;
+      border-radius: 18px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 16px 35px rgba(255,122,26,.28);
+    }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-outline {
+      border-color: var(--line);
+      box-shadow: none;
+      background: transparent;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(12px);
+      background: rgba(245,243,241,0.86);
+      border-bottom: 1px solid rgba(16,24,40,0.04);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 84px;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+
+    .logo .k { color: var(--primary); }
+    .logo small {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: .35em;
+      margin-top: -4px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav a {
+      color: #344054;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 56px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 6vw, 5.8rem);
+      line-height: .98;
+      letter-spacing: -0.06em;
+      margin: 0 0 24px;
+      max-width: 780px;
+    }
+
+    .hero-text { max-width: 760px; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(120px, 1fr));
+      gap: 28px;
+      margin: 48px 0 34px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: clamp(2rem, 3vw, 3rem);
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .mockup-card,
+    .floating-card,
+    .content-card,
+    .service-card,
+    .testimonial-card,
+    .cta-card,
+    .about-image,
+    .step-card {
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .mockup-wrap {
+      position: relative;
+      margin-top: 28px;
+    }
+
+    .mockup-card {
+      padding: 18px;
+      overflow: hidden;
+    }
+
+    .browser-bar {
+      padding: 6px 8px 16px;
+      color: #475467;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .screen {
+      aspect-ratio: 16/10;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #faf7f4 0%, #ede7e2 100%);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .screen::before {
+      content: '';
+      width: 44%;
+      height: 70%;
+      background: #111827;
+      border-radius: 22px 22px 14px 14px;
+      box-shadow: inset 0 0 0 10px #0f172a;
+      position: absolute;
+      bottom: -10%;
+    }
+
+    .screen::after {
+      content: '';
+      width: 18%;
+      height: 4%;
+      background: #d0d5dd;
+      border-radius: 999px;
+      position: absolute;
+      bottom: 6%;
+    }
+
+    .screen-label {
+      position: absolute;
+      left: 32px;
+      bottom: 26px;
+      z-index: 1;
+      background: rgba(255,255,255,.85);
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.05);
+    }
+
+    .screen-label strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .screen-label span {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: .95rem;
+    }
+
+    .floating-card {
+      position: absolute;
+      right: -10px;
+      top: -16px;
+      padding: 16px 22px;
+      font-weight: 700;
+      color: #667085;
+      border-radius: 20px;
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .service-preview {
+      padding: 18px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .preview-grid div {
+      aspect-ratio: 1/1;
+      border-radius: 18px;
+      background: linear-gradient(140deg, #f6d3bd, #f0ece8);
+    }
+
+    .service-preview h4,
+    .service-card h3,
+    .content-card h3,
+    .step-card h3,
+    .testimonial-name,
+    .footer-logo {
+      margin: 0;
+    }
+
+    .service-preview p,
+    .service-card p,
+    .content-card p,
+    .step-card p,
+    .service-card li,
+    .step-card li,
+    .footer p,
+    .footer li,
+    .footer a {
+      color: var(--muted);
+    }
+
+    .difference-grid,
+    .values-grid,
+    .services-grid,
+    .steps-grid,
+    .footer-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .difference-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 42px;
+    }
+
+    .content-card {
+      padding: 28px;
+      border: 1px solid rgba(16,24,40,0.04);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,122,26,.1);
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .values-grid {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 26px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 430px;
+      position: relative;
+      background: linear-gradient(135deg, #ffffff 0%, #f2efec 100%);
+      overflow: hidden;
+    }
+
+    .about-image::before,
+    .about-image::after {
+      content: '';
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,122,26,.12);
+    }
+
+    .about-image::before {
+      width: 260px;
+      height: 260px;
+      top: -40px;
+      left: -20px;
+    }
+
+    .about-image::after {
+      width: 210px;
+      height: 210px;
+      bottom: -30px;
+      right: -20px;
+    }
+
+    .founders-badge {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      padding: 22px 28px;
+      background: rgba(255,255,255,.95);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .founders-badge strong {
+      display: block;
+      font-size: 3rem;
+      line-height: 1;
+      color: #98a2b3;
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 34px;
+    }
+
+    .step-card {
+      padding: 28px;
+      position: relative;
+    }
+
+    .step-number {
+      position: absolute;
+      top: 24px;
+      right: 26px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: rgba(16,24,40,.08);
+    }
+
+    .step-meta {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(255,122,26,.08);
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .step-card ul,
+    .service-card ul,
+    .footer-links {
+      padding-left: 18px;
+      margin: 16px 0 0;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 34px;
+    }
+
+    .service-card {
+      padding: 30px;
+      border: 1px solid rgba(16,24,40,0.04);
+    }
+
+    .service-card .learn-more {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--primary);
+      font-weight: 700;
+      margin-top: 18px;
+    }
+
+    .testimonial-wrap {
+      margin-top: 34px;
+    }
+
+    .testimonial-card {
+      padding: 38px;
+    }
+
+    .stars {
+      color: #f59e0b;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+
+    .testimonial-quote {
+      font-size: clamp(1.4rem, 2.2vw, 2.35rem);
+      line-height: 1.4;
+      color: #344054;
+      margin: 0 0 22px;
+    }
+
+    .testimonial-result {
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .testimonial-person {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #ffcfad, #f2e5dc);
+      border: 4px solid #fff1e7;
+    }
+
+    .testimonial-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .cta {
+      padding-top: 40px;
+    }
+
+    .cta-card {
+      padding: 56px;
+      text-align: center;
+      background: linear-gradient(180deg, #fff 0%, #faf7f5 100%);
+    }
+
+    .cta-title {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .cta-sub {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .cta-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      color: #475467;
+      font-weight: 600;
+    }
+
+    .footer {
+      padding: 72px 0 36px;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .footer-logo {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      margin-bottom: 14px;
+    }
+
+    .footer h4 {
+      margin: 0 0 14px;
+      font-size: 1rem;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 25;
+      background: white;
+      border-radius: 999px;
+      padding: 14px 18px;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .about-grid,
+      .footer-grid,
+      .difference-grid,
+      .values-grid,
+      .services-grid,
+      .steps-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side { order: 2; }
+      .hero-main { order: 1; }
+      .about-image { min-height: 320px; }
+    }
+
+    @media (max-width: 760px) {
+      .section { padding: 64px 0; }
+      .header-inner { min-height: 72px; }
+      .nav {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 16px;
+        right: 16px;
+        background: white;
+        border-radius: 22px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav.open { display: flex; }
+      .menu-toggle { display: inline-block; }
+      .stats,
+      .difference-grid,
+      .values-grid,
+      .services-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .cta-card { padding: 34px 22px; }
+      .floating-card {
+        position: static;
+        display: inline-block;
+        margin-top: 14px;
+      }
+      .whatsapp-float span:last-child { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo" aria-label="Kreativa">
+        <span class="k">K</span>reativa
+        <small>Agência Digital</small>
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir menu" id="menuToggle">☰</button>
+
+      <nav class="nav" id="mainNav">
+        <a href="#sobre">Sobre</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato" class="btn btn-primary" style="padding: 12px 18px; border-radius: 14px;">Falar com a gente</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow">✦ Transformamos ideias em resultados reais</div>
+          <h1 class="hero-title">Ajudamos seu negócio a <span class="highlight">se destacar</span></h1>
+          <p class="hero-text">Não somos só mais uma agência. Somos parceiras estratégicas que entendem sua dor e constroem soluções digitais que realmente funcionam.</p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#contato">Quero crescer agora →</a>
+            <a class="btn btn-outline" href="#depoimentos">Ver nossos resultados</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>50+</strong>
+              <span>Negócios transformados</span>
+            </div>
+            <div class="stat">
+              <strong>4.9</strong>
+              <span>Avaliação média</span>
+            </div>
+            <div class="stat">
+              <strong>15d</strong>
+              <span>Tempo médio de entrega</span>
+            </div>
+          </div>
+
+          <div class="mockup-wrap">
+            <div class="mockup-card">
+              <div class="browser-bar">www.seunegocio.com.br</div>
+              <div class="screen">
+                <div class="screen-label">
+                  <strong>Sites Profissionais</strong>
+                  <span>+180% em conversões</span>
+                </div>
+              </div>
+            </div>
+            <div class="floating-card">Apenas 5 vagas por mês</div>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <div class="service-preview content-card">
+            <div class="preview-grid">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <h4>Gestão de Redes Sociais</h4>
+            <p>+5 mil seguidores/mês</p>
+          </div>
+
+          <div class="service-preview content-card">
+            <div class="preview-grid">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <h4>Identidade Visual</h4>
+            <p>Marca que fica na memória</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="diferenciais">
+      <div class="container">
+        <div class="eyebrow">⚲ Por que somos diferentes</div>
+        <h2 class="section-title">Não somos só mais uma agência. <span class="highlight">Somos suas parceiras</span></h2>
+        <p class="section-text">Enquanto outras agências tratam você como mais um número, nós entendemos sua dor, conhecemos seu mercado e construímos estratégias personalizadas que realmente funcionam.</p>
+
+        <div class="difference-grid">
+          <article class="content-card">
+            <div class="icon">🛡️</div>
+            <h3>Transparência Total</h3>
+            <p>Você acompanha cada etapa do projeto. Sem surpresas, sem enrolação.</p>
+          </article>
+          <article class="content-card">
+            <div class="icon">🎧</div>
+            <h3>Suporte Contínuo</h3>
+            <p>Não entregamos e sumimos. Estamos aqui para ajustar e melhorar sempre.</p>
+          </article>
+          <article class="content-card">
+            <div class="icon">💰</div>
+            <h3>Investimento Justo</h3>
+            <p>Preços honestos para pequenos e médios negócios. Sem cobrar fortunas.</p>
+          </article>
+        </div>
+
+        <div class="values-grid">
+          <article class="content-card">
+            <div class="icon">🤍</div>
+            <h3>Atendimento Humanizado</h3>
+            <p>Tratamos seu negócio como se fosse nosso.</p>
+          </article>
+          <article class="content-card">
+            <div class="icon">⚡</div>
+            <h3>Agilidade</h3>
+            <p>Resultados rápidos sem perder qualidade.</p>
+          </article>
+          <article class="content-card">
+            <div class="icon">🎯</div>
+            <h3>Dedicação Total</h3>
+            <p>Focamos 100% no seu sucesso.</p>
+          </article>
+          <article class="content-card">
+            <div class="icon">📈</div>
+            <h3>Foco em Resultados</h3>
+            <p>Cada ação pensada para converter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container about-grid">
+        <div class="about-image">
+          <div class="founders-badge">
+            <strong>3</strong>
+            <span>Sócias fundadoras</span>
+          </div>
+        </div>
+        <div>
+          <div class="eyebrow">🏠 Quem somos</div>
+          <h2 class="section-title">Nascemos da vontade de <span class="highlight">fazer diferente</span></h2>
+          <p class="section-text">A <strong>KREATIVA</strong> foi criada por quem entende as dores de quem empreende. Sabemos o quanto é difícil investir em marketing sem ter clareza sobre o retorno. Por isso construímos uma agência diferente: próxima, ágil e obcecada por resultado real.</p>
+          <p class="section-text" style="margin-top:16px;">Não somos mais uma no mercado. Somos o parceiro que o seu negócio precisa para crescer online com consistência.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="eyebrow">⚙️ Como funciona</div>
+        <h2 class="section-title">Da ideia ao resultado</h2>
+        <p class="section-text">Nosso processo é simples, rápido e transparente. Nada de projetos que demoram meses para sair do papel.</p>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <div class="step-meta">⏱️ 1 dia</div>
+            <h3>Conversa Inicial</h3>
+            <p>Entendemos seu negócio, suas dores e seus objetivos. Sem pressa, com atenção total.</p>
+            <ul>
+              <li>Análise do negócio</li>
+              <li>Identificação de dores</li>
+              <li>Definição de objetivos</li>
+            </ul>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <div class="step-meta">⏱️ 2–3 dias</div>
+            <h3>Estratégia &amp; Proposta</h3>
+            <p>Criamos um plano personalizado com tudo que você precisa para alcançar seus resultados.</p>
+            <ul>
+              <li>Plano estratégico</li>
+              <li>Proposta detalhada</li>
+              <li>Cronograma claro</li>
+            </ul>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <div class="step-meta">⏱️ 7–15 dias</div>
+            <h3>Mãos à Obra</h3>
+            <p>Executamos tudo com agilidade e qualidade. Você acompanha cada etapa do desenvolvimento.</p>
+            <ul>
+              <li>Desenvolvimento ágil</li>
+              <li>Acompanhamento diário</li>
+              <li>Ajustes em tempo real</li>
+            </ul>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">04</span>
+            <div class="step-meta">⏱️ Contínuo</div>
+            <h3>Resultados &amp; Ajustes</h3>
+            <p>Entregamos, analisamos os resultados e fazemos melhorias constantes para maximizar seu ROI.</p>
+            <ul>
+              <li>Entrega final</li>
+              <li>Análise de métricas</li>
+              <li>Otimização contínua</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="eyebrow">🧩 Nossos serviços</div>
+        <h2 class="section-title">Tudo que você precisa para dominar o digital</h2>
+        <p class="section-text">Oferecemos soluções completas para fazer seu negócio crescer online. Da criação à gestão, estamos com você.</p>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon">💻</div>
+            <h3>Sites que Vendem</h3>
+            <p>Criamos sites profissionais que convertem visitantes em clientes. Rápidos, responsivos e otimizados para resultados.</p>
+            <ul>
+              <li>Design responsivo</li>
+              <li>SEO otimizado</li>
+              <li>Integração com WhatsApp</li>
+            </ul>
+            <a href="#contato" class="learn-more">Saiba mais →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">📱</div>
+            <h3>Gestão de Redes Sociais</h3>
+            <p>Cuidamos do seu Instagram e Facebook com estratégia, conteúdo de qualidade e engajamento real.</p>
+            <ul>
+              <li>Conteúdo estratégico</li>
+              <li>Stories e Reels</li>
+              <li>Análise de métricas</li>
+            </ul>
+            <a href="#contato" class="learn-more">Saiba mais →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🎨</div>
+            <h3>Identidade Visual</h3>
+            <p>Desenvolvemos logos e identidades visuais que fazem sua marca ser lembrada e desejada.</p>
+            <ul>
+              <li>Logo profissional</li>
+              <li>Manual da marca</li>
+              <li>Aplicações práticas</li>
+            </ul>
+            <a href="#contato" class="learn-more">Saiba mais →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🚀</div>
+            <h3>Tráfego Pago</h3>
+            <p>Gerenciamos seus anúncios no Google e Meta Ads para trazer clientes qualificados todos os dias.</p>
+            <ul>
+              <li>Google Ads</li>
+              <li>Facebook &amp; Instagram Ads</li>
+              <li>Otimização contínua</li>
+            </ul>
+            <a href="#contato" class="learn-more">Saiba mais →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="depoimentos">
+      <div class="container">
+        <div class="eyebrow">💬 Depoimentos</div>
+        <h2 class="section-title">Veja o que nossos clientes estão dizendo</h2>
+        <p class="section-text">Resultados reais de negócios que confiaram em nós para crescer no digital.</p>
+
+        <div class="testimonial-wrap">
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">“Antes eu dependia só de indicação. Depois que a Kreativa criou meu Instagram e site, minha agenda não para. Já faturei 3x mais em 2 meses.”</p>
+            <div class="testimonial-result">🏆 +180% em agendamentos</div>
+            <div class="testimonial-person">
+              <div class="avatar"></div>
+              <div>
+                <div class="testimonial-name">Mariana Silva</div>
+                <div class="section-text" style="font-size:1rem;">Proprietária - Studio de Beleza</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta" id="contato">
+      <div class="container">
+        <div class="cta-card">
+          <h2 class="cta-title">Seu concorrente já está investindo em digital. <span class="highlight">E você?</span></h2>
+          <p class="cta-sub">Enquanto você pensa, outros negócios estão crescendo, conquistando clientes e aumentando faturamento. Não fique para trás.</p>
+          <div class="btn-row" style="justify-content:center;">
+            <a class="btn btn-primary" href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">Falar com a gente agora</a>
+          </div>
+          <div class="cta-badges">
+            <span>🛡️ Atendimento humanizado</span>
+            <span>⏱️ Resposta em 24h</span>
+            <span>⭐ 4.9/5 avaliação média</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><span class="k">K</span>reativa</div>
+          <p>Ajudamos pequenos e médios negócios a crescerem no digital com estratégias que realmente funcionam.</p>
+        </div>
+
+        <div>
+          <h4>Serviços</h4>
+          <ul class="footer-links">
+            <li><a href="#servicos">Criação de Sites</a></li>
+            <li><a href="#servicos">Gestão de Redes Sociais</a></li>
+            <li><a href="#servicos">Identidade Visual</a></li>
+            <li><a href="#servicos">Tráfego Pago</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#depoimentos">Portfólio</a></li>
+            <li><a href="#como-funciona">Como Funciona</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contato</h4>
+          <ul class="footer-links">
+            <li>(11) 99999-9999</li>
+            <li>contato@kreatica.com.br</li>
+            <li>Seg - Sex: 9h às 18h</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2024 Kreativa. Todos os direitos reservados.</span>
+        <span>Política de Privacidade · Termos de Uso</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
+    <span>💬</span>
+    <span>Talk with Us</span>
+  </a>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('mainNav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
