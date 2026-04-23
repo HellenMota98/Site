@@ -268,20 +268,12 @@
     .services-bottom{text-align:center;margin-top:20px}
 
     .testimonials{text-align:center}
-    .testimonial-card{
-      max-width:640px;
-      margin:26px auto 0;
-      background:#fff;
-      border-radius:28px;
-      padding:34px 30px;
-      box-shadow:var(--shadow);
-    }
-    .stars{color:#f0b11d;letter-spacing:4px;font-size:16px;margin-bottom:14px}
-    .testimonial-card p{margin:0;color:#585550;font-size:1.04rem}
-    .testimonial-person{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:18px}
-    .avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(145deg,#e4bea0,#f8ede1)}
-    .people-row{display:flex;gap:10px;justify-content:center;margin-top:20px}
-    .people-row span{width:34px;height:34px;border-radius:50%;background:linear-gradient(145deg,#e7c5aa,#f5e7dc);border:2px solid #fff;box-shadow:var(--shadow-soft)}
+    .testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:34px}
+    .testimonial-item{background:#fff;border-radius:28px;padding:28px 24px;box-shadow:var(--shadow);text-align:left}
+    .testimonial-item .stars{color:#f0b11d;letter-spacing:4px;font-size:16px;margin-bottom:14px}
+    .testimonial-item p{margin:0 0 18px;color:#585550;font-size:1rem;line-height:1.7}
+    .testimonial-meta strong{display:block;font-size:1rem;margin-bottom:4px}
+    .testimonial-meta span{color:var(--muted);font-size:.95rem}
 
     .impact{
       background:radial-gradient(circle at 15% 20%, rgba(255,145,58,.45) 0%, rgba(255,145,58,0) 28%),
@@ -332,7 +324,7 @@
       .nav{display:none;position:absolute;top:72px;left:16px;right:16px;background:#fff;border-radius:22px;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}
       .nav.open{display:flex}
       .menu-toggle{display:block}
-      .hero-grid,.grid-2,.about-wrap,.services-grid,.process-grid,.footer-grid,.soft-cards,.value-row{grid-template-columns:1fr}
+      .hero-g
       .service-float,.mini-card,.tag-float{position:static;margin-top:14px;width:auto}
       .about-photo{min-height:300px}
       .section{padding:68px 0}
@@ -383,12 +375,16 @@
           </div>
           <div class="service-float">
             <div class="service-float-grid">
-              <span style="background-image:url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80');background-size:cover;background-posi
+              <span style="background-image:url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80');background-size:cover;background-position:center"></span>
+              <span style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80');background-size:cover;background-position:center"></span>
+              <span style="background-image:url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=400&q=80');background-size:cover;background-position:center"></span>
+              <span style="background-image:url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80');background-size:cover;background-position:center"></span>
+            </div>
             <strong>Gestão de Redes Sociais</strong>
             <small>+5 mil seguidores/mês</small>
           </div>
           <div class="mini-card">
-            <div class="icon">✦</div>
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Projeto de identidade visual" style="width:100%;height:120px;object-fit:cover;border-radius:14px;margin-bottom:10px;" />
             <strong>Identidade Visual</strong>
             <small>Marca que fica na memória</small>
           </div>
@@ -484,7 +480,7 @@
 
         <div class="cta-strip">
           <p>Pronta para começar sua transformação digital?</p>
-          <a class="btn btn-primary" href="#contato">Agendar conversa gratuita →</a>
+          <a class="btn btn-primary" href="https://wa.me/5531997965250?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20marketing%20que%20voc%C3%AAs%20oferecem" target="_blank" rel="noopener noreferrer">Agendar conversa gratuita →</a>
         </div>
       </div>
     </section>
@@ -543,18 +539,43 @@
         <h2 class="section-title">Veja o que nossos clientes estão <span class="highlight">dizendo</span></h2>
         <p class="section-text" style="margin:0 auto;">Resultados reais de negócios que confiaram em nós para crescer no digital.</p>
 
-        <article class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>“Antes eu dependia só de indicação. Depois que a Kreativa criou meu Instagram e site, minha agenda não para. Já faturei 3x mais em 2 meses.”</p>
-          <div class="testimonial-person">
-            <div class="avatar"></div>
-            <div>
-              <strong>Mariana Silva</strong><br>
-              <span style="color:var(--muted);font-size:.94rem;">Proprietária · Studio de Beleza</span>
+        <div class="testimonials-grid">
+          <article class="testimonial-item">
+            <div class="stars">★★★★★</div>
+            <p>“Depois que a Kreativa assumiu nossa presença digital, começamos a receber muito mais contatos qualificados. Hoje nossa clínica tem uma comunicação mais profissional e muito mais autoridade online.”</p>
+            <div class="testimonial-meta">
+              <strong>Dra. Fernanda Alves</strong>
+              <span>Clínica médica</span>
             </div>
-          </div>
-          <div class="people-row"><span></span><span></span><span></span><span></span></div>
-        </article>
+          </article>
+
+          <article class="testimonial-item">
+            <div class="stars">★★★★★</div>
+            <p>“Nosso Instagram ficou muito mais estratégico e profissional. Tivemos mais alcance, mais engajamento e principalmente mais clientes chegando pelo digital.”</p>
+            <div class="testimonial-meta">
+              <strong>Mariana Souza</strong>
+              <span>Estética</span>
+            </div>
+          </article>
+
+          <article class="testimonial-item">
+            <div class="stars">★★★★★</div>
+            <p>“A Kreativa conseguiu traduzir exatamente o posicionamento que eu queria passar. O resultado foi uma comunicação mais sofisticada, mais confiança na marca e mais procura pelos procedimentos.”</p>
+            <div class="testimonial-meta">
+              <strong>Dr. Ricardo Mendes</strong>
+              <span>Cirurgia plástica</span>
+            </div>
+          </article>
+
+          <article class="testimonial-item">
+            <div class="stars">★★★★★</div>
+            <p>“Eu precisava de uma presença digital mais clara e acolhedora, e foi exatamente isso que elas construíram. Meu perfil ficou mais profissional e passei a receber mais contatos de pacientes.”</p>
+            <div class="testimonial-meta">
+              <strong>Dra. Camila Rocha</strong>
+              <span>Neuropsicóloga</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -573,8 +594,8 @@
         </div>
 
         <div class="impact-actions">
-          <a class="btn btn-primary" href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">Falar com a gente agora</a>
-          <a class="btn btn-ghost" href="mailto:contato@kreatica.com.br">Enviar e-mail</a>
+          <a class="btn btn-primary" href="https://wa.me/5531997965250?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20marketing%20que%20voc%C3%AAs%20oferecem" target="_blank" rel="noopener noreferrer">Falar com a gente agora</a>
+          <a class="btn btn-ghost" href="mailto:agenciadigitalkreativa@gmail.com">agenciadigitalkreativa@gmail.com</a>
         </div>
       </div>
     </section>
@@ -608,9 +629,9 @@
         <div>
           <h4>Contato</h4>
           <ul>
-            <li>(11) 99999-9999</li>
-            <li>contato@kreatica.com.br</li>
-            <li>Seg · Sex: 9h às 18h</li>
+            <li><a href="https://wa.me/5531997965250?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20marketing%20que%20voc%C3%AAs%20oferecem" target="_blank" rel="noopener noreferrer">(31) 99796-5250</a></li>
+            <li><a href="mailto:agenciadigitalkreativa@gmail.com">agenciadigitalkreativa@gmail.com</a></li>
+            <li>Belo Horizonte - MG</li>
           </ul>
         </div>
       </div>
@@ -621,7 +642,7 @@
     </div>
   </footer>
 
-  <a class="whats" href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer"><span>💬</span><span>Talk with Us</span></a>
+  <a class="whats" href="https://wa.me/5531997965250?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20marketing%20que%20voc%C3%AAs%20oferecem" target="_blank" rel="noopener noreferrer"><span>💬</span><span>Talk with Us</span></a>
 
   <script>
     const toggle = document.getElementById('menuToggle');
