@@ -103,8 +103,8 @@
     .nav a{font-size:14px;font-weight:700;color:#3a3835}
     .menu-toggle{display:none;border:0;background:transparent;font-size:28px}
 
-    .hero{padding:28px 0 28px}
-    .hero-grid{display:grid;grid-template-columns:minmax(540px,1fr) minmax(500px,620px);gap:72px;align-items:start}
+    .hero{padding:28px 0 28px;min-height:760px}
+    .hero-grid{display:grid;grid-template-columns:minmax(540px,1fr) minmax(500px,620px);gap:72px;align-items:start;grid-auto-rows:min-content}
     .hero-title{
       margin:0 0 18px;
       font-size:clamp(2.8rem,5vw,5.2rem);
@@ -124,15 +124,8 @@
     .stat strong{display:block;font-size:clamp(1.9rem,2.8vw,2.8rem);line-height:1;color:var(--primary);margin-bottom:8px}
     .stat span{color:var(--muted);font-weight:600;font-size:.98rem}
 
-.mockup-stack{
-  position:relative;
-  top:-200px;
-  max-width:620px;
-  width:100%;
-  justify-self:end;
-  margin-left:auto;
-  margin-top:0;
-} 
+    .mockup-stack{position:relative;max-width:700px;width:100%;justify-self:end;margin-left:auto;margin-top:0;align-self:center}
+    .hero-side-image{display:block;width:100%;height:auto;border-radius:34px;box-shadow:var(--shadow)}
     .mockup-main{
       background:#fff;
       border-radius:28px;
@@ -185,18 +178,8 @@
     .section-surface{background:linear-gradient(180deg,#fffaf3 0%,#faf6ee 100%)}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
 
-    .feature-list{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:24px;
-  margin-top:26px;
-}
-    .feature-item{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  align-items:flex-start;
-}
+    .feature-list{display:grid;gap:14px;margin-top:26px}
+    .feature-item{display:flex;gap:14px;align-items:flex-start}
     .feature-icon{width:42px;height:42px;border-radius:14px;background:#fff3e8;color:var(--primary);display:grid;place-items:center;font-size:18px;flex:0 0 42px;box-shadow:var(--shadow-soft)}
     .feature-item h3{margin:0 0 5px;font-size:1rem}
     .feature-item p{margin:0;color:var(--muted);font-size:.98rem}
@@ -324,8 +307,8 @@
     .footer p,.footer li,.footer a,.footer-bottom{color:rgba(255,255,255,.84)}
     .footer ul{list-style:none;padding:0;margin:0}
     .footer li+li{margin-top:8px}
-    .footer-logo{font-size:1.8rem;font-weight:900;letter-spacing:-.06em;margin-bottom:10px}
-    .footer-logo .k{color:#ffe0c1}
+    .footer-logo{margin-bottom:10px}
+    .footer-logo img{filter:none}
     .footer-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);font-size:13px}
 
     .whats{
@@ -334,6 +317,7 @@
     }
 
     @media (max-width:1100px){
+      .hero{min-height:auto}
       .hero-grid{grid-template-columns:1fr;gap:34px}
       .grid-2,.about-wrap,.process-grid,.services-grid,.footer-grid{grid-template-columns:1fr 1fr}
       .impact-grid{grid-template-columns:1fr}
@@ -380,31 +364,9 @@
             <a class="btn btn-outline" href="#depoimentos">Ver nossos resultados</a>
           </div>
         </div>
-        </div>
 
         <div class="mockup-stack">
-          <div class="tag-float">Apenas 5 vagas por mês</div>
-          <div class="mockup-main">
-            <div class="browser-bar">www.seunegocio.com.br</div>
-            <div class="screen">
-              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Mockup de site profissional" style="width:100%;height:100%;object-fit:cover;opacity:.92;" />
-            </div>
-          </div>
-          <div class="service-float">
-            <div class="service-float-grid">
-              <span style="background-image:url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80');background-size:cover;background-position:center"></span>
-              <span style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80');background-size:cover;background-position:center"></span>
-              <span style="background-image:url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=400&q=80');background-size:cover;background-position:center"></span>
-              <span style="background-image:url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80');background-size:cover;background-position:center"></span>
-            </div>
-            <strong>Gestão de Redes Sociais</strong>
-            <small>+5 mil seguidores/mês</small>
-          </div>
-          <div class="mini-card">
-            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Projeto de identidade visual" style="width:100%;height:120px;object-fit:cover;border-radius:14px;margin-bottom:10px;" />
-            <strong>Identidade Visual</strong>
-            <small>Marca que fica na memória</small>
-          </div>
+          <img src="hero-kreativa.png" alt="Apresentação visual dos serviços da Kreativa" class="hero-side-image" />
         </div>
       </div>
     </section>
@@ -516,7 +478,7 @@
             <h3>Sites que Vendem</h3>
             <p>Criamos sites profissionais que convertem visitantes em clientes.</p>
             <ul><li>Design responsivo</li><li>SEO otimizado</li><li>Integração com WhatsApp</li></ul>
-            <span class="learn">E muito mais →</span>
+            <span class="learn">Saiba mais →</span>
           </article>
 
           <article class="service-card soft-pink">
@@ -524,7 +486,7 @@
             <h3>Gestão de Redes Sociais</h3>
             <p>Conteúdo estratégico, presença e engajamento real.</p>
             <ul><li>Conteúdo estratégico</li><li>Stories e Reels</li><li>Análise de métricas</li></ul>
-            <span class="learn">E muito mais →</span>
+            <span class="learn">Saiba mais →</span>
           </article>
 
           <article class="service-card soft-yellow">
@@ -532,7 +494,7 @@
             <h3>Identidade Visual</h3>
             <p>Desenvolvemos marcas lembradas e desejadas.</p>
             <ul><li>Logo profissional</li><li>Manual da marca</li><li>Aplicações práticas</li></ul>
-            <span class="learn">E muito mais →</span>
+            <span class="learn">Saiba mais →</span>
           </article>
 
           <article class="service-card active-pink">
@@ -540,7 +502,7 @@
             <h3>Tráfego Pago</h3>
             <p>Anúncios no Google e Meta para atrair clientes qualificados.</p>
             <ul><li>Google Ads</li><li>Meta Ads</li><li>Otimização contínua</li></ul>
-            <span class="learn">E muito mais →</span>
+            <span class="learn">Saiba mais →</span>
           </article>
         </div>
 
@@ -622,7 +584,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-logo"><img src="6.png" alt="Logo Kreativa" style="max-width:140px;width:120%;height:auto;display:block;" /></div>
+          <div class="footer-logo"><img src="6.png" alt="Logo Kreativa" style="max-width:220px;width:100%;height:auto;display:block;" /></div>
           <p>Ajudamos pequenos e médios negócios a crescerem no digital com estratégias que realmente funcionam.</p>
         </div>
         <div>
