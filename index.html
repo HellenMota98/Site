@@ -103,14 +103,31 @@
     .nav a{font-size:14px;font-weight:700;color:#3a3835}
     .menu-toggle{display:none;border:0;background:transparent;font-size:28px}
 
-    .hero{padding:40px 0 0px;min-height:auto}
+    .hero{padding:60px 0 60px;min-height:auto}
     .hero-grid{display:grid;grid-template-columns:minmax(540px,1fr) minmax(500px,620px);gap:72px;align-items:start;grid-auto-rows:min-content}
     .hero-title{
       margin:0 0 18px;
       font-size:clamp(2.8rem,5vw,5.2rem);
       line-height:.96;
       letter-spacing:-.07em;
-      max-width:560px;
+      max-width:620px;
+    }
+    .hero-rotator{
+      color:var(--primary);
+      display:inline-block;
+      min-width:3.8ch;
+      position:relative;
+    }
+    .hero-rotator::after{
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:100%;
+      height:4px;
+      border-radius:999px;
+      background:currentColor;
+      opacity:.9;
     }
     .stats{
       display:grid;
@@ -176,10 +193,10 @@
     .tag-float{right:18px;top:-8px;padding:14px 18px;font-size:13px;font-weight:700;color:#857f78}
 
     .section-surface{background:linear-gradient(180deg,#fffaf3 0%,#faf6ee 100%)}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
 
-    .feature-list{display:grid;gap:14px;margin-top:26px}
-    .feature-item{display:flex;gap:14px;align-items:flex-start}
+    .feature-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:26px}
+    .feature-item{display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding:18px;border-radius:18px;background:#fff7ef;box-shadow:var(--shadow-soft)}
     .feature-icon{width:42px;height:42px;border-radius:14px;background:#fff3e8;color:var(--primary);display:grid;place-items:center;font-size:18px;flex:0 0 42px;box-shadow:var(--shadow-soft)}
     .feature-item h3{margin:0 0 5px;font-size:1rem}
     .feature-item p{margin:0;color:var(--muted);font-size:.98rem}
@@ -308,7 +325,7 @@
     .footer ul{list-style:none;padding:0;margin:0}
     .footer li+li{margin-top:8px}
     .footer-logo{margin-bottom:10px}
-    .footer-logo img{filter:none}
+    .footer-logo img{filter:none;max-width:160px;width:100%;height:auto;display:block}
     .footer-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);font-size:13px}
 
     .whats{
@@ -329,7 +346,7 @@
       .nav{display:none;position:absolute;top:72px;left:16px;right:16px;background:#fff;border-radius:22px;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}
       .nav.open{display:flex}
       .menu-toggle{display:block}
-      .hero-grid,.grid-2,.about-wrap,.services-grid,.process-grid,.footer-grid,.soft-cards,.value-row,.testimonials-grid{grid-template-columns:1fr}
+      .hero-grid,.grid-2,.about-wrap,.services-grid,.process-grid,.footer-grid,.soft-cards,.value-row,.testimonials-grid,.feature-list{grid-template-columns:1fr}
       .service-float,.mini-card,.tag-float{position:static;margin-top:14px;width:auto}
       .about-photo{min-height:300px}
       .section{padding:68px 0}
@@ -357,7 +374,7 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">✦ Transformamos ideias em resultados reais</div>
-          <h1 class="hero-title">Ajudamos seu negócio a <span class="highlight">se destacar</span></h1>
+          <h1 class="hero-title">Ajudamos seu negócio a <span class="hero-rotator" id="heroRotator">crescer</span></h1>
           <p class="hero-text">Não somos só mais uma agência. Somos parceiras estratégicas que entendem sua dor e constroem soluções digitais que realmente funcionam.</p>
           <div class="btn-row">
             <a class="btn btn-primary" href="https://wa.me/5531997965250?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20marketing%20que%20voc%C3%AAs%20oferecem" target="_blank" rel="noopener noreferrer">Quero crescer agora →</a>
@@ -366,38 +383,24 @@
         </div>
 
         <div class="mockup-stack">
-          <img src="ChatGPT Image 24 de abr. de 2026, 08_39_19.png" alt="Apresentação visual dos serviços da Kreativa" class="hero-side-image" />
+          <img src="hero-kreativa.png" alt="Apresentação visual dos serviços da Kreativa" class="hero-side-image" />
         </div>
       </div>
     </section>
 
-    <section class="section section-surface">
+    <section class="section section-surface" style="padding-top:80px;" id="diferenciais">
       <div class="container grid-2">
-        <div>
+        <div style="max-width:620px;justify-self:center;">
           <div class="eyebrow">✦ Por que somos diferentes</div>
           <h2 class="section-title">Não somos só mais uma agência. <span class="highlight">Somos suas parceiras</span></h2>
           <p class="section-text">Enquanto outras agências tratam você como mais um número, nós entendemos sua dor, conhecemos seu mercado e construímos estratégias personalizadas que realmente funcionam.</p>
-          <div class="feature-list">
-            <div class="feature-item">
-              <div class="feature-icon">🛡️</div>
-              <div><h3>Transparência Total</h3><p>Você acompanha cada etapa do projeto. Sem surpresas, sem enrolação.</p></div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">🎧</div>
-              <div><h3>Suporte Contínuo</h3><p>Não entregamos e sumimos. Estamos aqui para ajustar e melhorar sempre.</p></div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">💸</div>
-              <div><h3>Investimento Justo</h3><p>Preços honestos para pequenos e médios negócios. Sem cobrar fortunas.</p></div>
-            </div>
-          </div>
         </div>
 
-        <div class="soft-cards">
-          <article class="soft-card pink"><div class="soft-icon">♡</div><h4>Atendimento Humanizado</h4><p>Tratamos seu negócio como se fosse nosso.</p></article>
-          <article class="soft-card yellow"><div class="soft-icon">⚡</div><h4>Agilidade</h4><p>Resultados rápidos sem perder qualidade.</p></article>
-          <article class="soft-card peach"><div class="soft-icon">✦</div><h4>Dedicação Total</h4><p>Focamos 100% no seu sucesso.</p></article>
-          <article class="soft-card cream"><div class="soft-icon">📈</div><h4>Foco em Resultados</h4><p>Cada ação pensada para converter.</p></article>
+        <div class="soft-cards" style="grid-template-columns:1fr 1fr;max-width:620px;justify-self:center;">
+          <article class="soft-card pink"><div class="soft-icon">🛡️</div><h4>Transparência Total</h4><p>Você acompanha cada etapa do projeto. Sem surpresas, sem enrolação.</p></article>
+          <article class="soft-card yellow"><div class="soft-icon">🎧</div><h4>Suporte Contínuo</h4><p>Não entregamos e sumimos. Estamos aqui para ajustar e melhorar sempre.</p></article>
+          <article class="soft-card peach"><div class="soft-icon">♡</div><h4>Atendimento Humanizado</h4><p>Tratamos seu negócio como se fosse nosso.</p></article>
+          <article class="soft-card cream"><div class="soft-icon">💸</div><h4>Investimento Justo</h4><p>Preços honestos para pequenos e médios negócios. Sem cobrar fortunas.</p></article>
         </div>
       </div>
     </section>
@@ -521,37 +524,37 @@
         <div class="testimonials-grid">
           <article class="testimonial-item">
             <div class="stars">★★★★★</div>
-            <p>“Depois que a Kreativa assumiu nossa presença digital, começamos a receber muito mais contatos qualificados. Hoje nossa clínica tem uma comunicação mais profissional e muito mais autoridade online.”</p>
-            <div class="testimonial-meta">
-              <strong>Dra. Fernanda Alves</strong>
-              <span>Clínica médica</span>
-            </div>
-          </article>
-
-          <article class="testimonial-item">
-            <div class="stars">★★★★★</div>
-            <p>“Nosso Instagram ficou muito mais estratégico e profissional. Tivemos mais alcance, mais engajamento e principalmente mais clientes chegando pelo digital.”</p>
+            <p>“A comunicação da nossa clínica estética ficou muito mais profissional. Hoje recebemos mais contatos qualificados e passamos muito mais confiança no digital.”</p>
             <div class="testimonial-meta">
               <strong>Mariana Souza</strong>
-              <span>Estética</span>
+              <span>Clínica estética</span>
             </div>
           </article>
 
           <article class="testimonial-item">
             <div class="stars">★★★★★</div>
-            <p>“A Kreativa conseguiu traduzir exatamente o posicionamento que eu queria passar. O resultado foi uma comunicação mais sofisticada, mais confiança na marca e mais procura pelos procedimentos.”</p>
+            <p>“Eu precisava de uma presença digital mais acolhedora, clara e profissional. A Kreativa conseguiu traduzir exatamente isso no meu posicionamento.”</p>
             <div class="testimonial-meta">
-              <strong>Dr. Ricardo Mendes</strong>
-              <span>Cirurgia plástica</span>
-            </div>
-          </article>
-
-          <article class="testimonial-item">
-            <div class="stars">★★★★★</div>
-            <p>“Eu precisava de uma presença digital mais clara e acolhedora, e foi exatamente isso que elas construíram. Meu perfil ficou mais profissional e passei a receber mais contatos de pacientes.”</p>
-            <div class="testimonial-meta">
-              <strong>Dra. Camila Rocha</strong>
+              <strong>Aline D'Avila</strong>
               <span>Neuropsicóloga</span>
+            </div>
+          </article>
+
+          <article class="testimonial-item">
+            <div class="stars">★★★★★</div>
+            <p>“Nossa empresa de tecnologia precisava comunicar inovação com mais clareza. O trabalho trouxe mais autoridade para a marca e melhor percepção do nosso serviço.”</p>
+            <div class="testimonial-meta">
+              <strong>Rafael Martins</strong>
+              <span>Empresa de tecnologia</span>
+            </div>
+          </article>
+
+          <article class="testimonial-item">
+            <div class="stars">★★★★★</div>
+            <p>“A presença digital da farmácia ficou mais organizada, confiável e profissional. Tivemos melhora no alcance da marca e mais aproximação com o público.”</p>
+            <div class="testimonial-meta">
+              <strong>Camila Ferreira</strong>
+              <span>Farmácia</span>
             </div>
           </article>
         </div>
@@ -626,10 +629,32 @@
   <script>
     const toggle = document.getElementById('menuToggle');
     const nav = document.getElementById('mainNav');
+    const heroRotator = document.getElementById('heroRotator');
+    const heroWords = ['crescer', 'se destacar', 'vender mais'];
+    let heroIndex = 0;
+
     toggle.addEventListener('click', () => nav.classList.toggle('open'));
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', () => nav.classList.remove('open'));
     });
+
+    if (heroRotator) {
+      setInterval(() => {
+        heroIndex = (heroIndex + 1) % heroWords.length;
+        heroRotator.animate(
+          [
+            { opacity: 1, transform: 'translateY(0)' },
+            { opacity: 0, transform: 'translateY(-8px)' },
+            { opacity: 0, transform: 'translateY(8px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+          ],
+          { duration: 550, easing: 'ease' }
+        );
+        setTimeout(() => {
+          heroRotator.textContent = heroWords[heroIndex];
+        }, 260);
+      }, 2200);
+    }
   </script>
 </body>
 </html>
